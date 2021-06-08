@@ -1,0 +1,8 @@
+{
+  "mysql": {
+    "host": "localhost",
+    "user": "root",
+    "password": "mariadbR3tnwz4h_",
+    "database": "pythonpetri"
+  }
+}
