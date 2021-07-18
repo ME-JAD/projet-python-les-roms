@@ -1,0 +1,77 @@
+{
+  "pawns": {
+    "microbes": {
+      "microbe_001": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 20, "y": 21}},
+          "size": {"size": {}},
+          "max_size": {"max_size": {}},
+          "energy": {"energy": 1},
+          "max_energy": {"max_energy": {}},
+          "shape": {"simple": {}},
+          "color": {"red": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "anarchic",
+          "reproducing": "mitosis",
+          "mutation": "low"
+        }
+      }
+    },
+    "plants": {
+      "plant_001": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"plant": {}},
+          "position": {"position": {"x": 20, "y": 20}},
+          "size": {"size": {}},
+          "max_size": {"max_size": {}},
+          "energy": {"energy": 10000},
+          "max_energy": {"max_energy": {}},
+          "shape": {"simple": {}},
+          "color": {"green": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "photosynthesis",
+          "moving": "static",
+          "reproducing": "grow",
+          "mutation": "low"
+        }
+      },
+      "plant_002": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"plant": {}},
+          "position": {"position": {"x": 20, "y": 40}},
+          "size": {"size": {}},
+          "max_size": {"max_size": {}},
+          "energy": {"energy": 10000},
+          "max_energy": {"max_energy": {}},
+          "shape": {"simple": {}},
+          "color": {"green": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "photosynthesis",
+          "moving": "static",
+          "reproducing": "grow",
+          "mutation": "low"
+        }
+      }
+    }
+  }
+}

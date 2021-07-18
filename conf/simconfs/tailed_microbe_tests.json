@@ -1,0 +1,30 @@
+{
+  "pawns": {
+    "microbes": {
+      "microbe_001": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 20, "y": 21}},
+          "size": {"size": 10},
+          "max_size": {"max_size": {}},
+          "energy": {"energy": 1},
+          "max_energy": {"max_energy": {}},
+          "shape": {"forkhead": {}},
+          "color": {"red": {}},
+          "tail": {"tail": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "explorer",
+          "reproducing": "mitosis",
+          "mutation": "low"
+        }
+      }
+    }
+  }
+}

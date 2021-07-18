@@ -1,8 +1,11 @@
-from abc import ABC, abstractmethod
+from abc import abstractmethod
 
 
 class IController:
-    pass
-    # @abstractmethod
-    # def performUpdateRank(self, rank):
-    #     ...
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
