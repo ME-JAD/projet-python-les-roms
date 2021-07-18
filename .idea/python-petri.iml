@@ -3,8 +3,25 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
+      <excludeFolder url="file://$MODULE_DIR$/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/controller_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/entity_builder_tests/builder_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/pawn_tests/behaviors_tests/moving_behavior_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/pawn_tests/behaviors_tests/mutation_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/pawn_tests/microbe_tests/.pytest_cache/v" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/pawn_tests/plant_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/petri_dish_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/model_tests/.pytest_cache" />
+      <excludeFolder url="file://$MODULE_DIR$/tests/.pytest_cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
   </component>
 </module>
