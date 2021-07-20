@@ -1,6 +1,7 @@
 from model.pawns.microbes.parts.special_part_abstract import SpecialPartAbstract
+from model.pawns.properties.parent_pawn.parent_pawn import ParentPawn
 
 
 class HeadPart(SpecialPartAbstract):
-    def __init__(self, properties=None, behaviors=None):
-        super().__init__(properties, behaviors)
+    def __init__(self, parent_pawn: ParentPawn):
+        super().__init__(parent_pawn)

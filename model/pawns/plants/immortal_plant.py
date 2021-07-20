@@ -20,23 +20,14 @@ from model.pawns.properties.taxonomy.plant import Plant
 
 class ImmortalPlant(PawnAbstract):
     def __init__(self, properties=None, behaviors=None):
-        if behaviors is None:
-            behaviors = {}
-        if properties is None:
-            properties = {}
-        self._properties = properties
-        self._behaviors = behaviors
+        super().__init__(properties, behaviors)
 
         self.set_property('id', Id())
         self.set_property('taxonomy', Plant())
-        self.set_property('position', Position({
-            'x': random.randint(0, 200),
-            'y': random.randint(0, 200),
-        }))
         self.set_property('size', SimpleSize())
         self.set_property('max_size', SimpleMaxSize())
         self.set_property('energy', Energy(1000))
-        self.set_property('max_energy', MaxEnergy())
+        self.set_property('max_energy', MaxEnergy(1000))
 
         self.set_property('color', Green())
         self.set_property('shape', SimpleShape())

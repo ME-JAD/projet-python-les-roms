@@ -39,36 +39,12 @@ class PawnAbstract(PawnInterface):
         self._behaviors[behavior_name] = behavior
 
     def act(self, petri_dish: IPetriDish):
-        iterator = iter(self.get_property('lifecycle').get())
-        acted = False
-        while not acted:
-            acted = self.get_behavior(next(iterator)).act(petri_dish, self)
-        self.__death_check(petri_dish)
-
-    def __death_check(self, petri_dish):
-        if not self.get_property('alive').get():
-            self.__delete_pawns_after_countdown(petri_dish)
-
-        if self.get_property('energy').get() <= 0:
-            return self.get_behavior('death').act(petri_dish, self)
-
-    def __delete_pawns_after_countdown(self, petri_dish):
-        self.get_property('energy').set(self.get_property('energy').get() - 1)
-        if self.get_property('energy').get() < 1:
-            petri_dish.get_pawns().remove(self)
-
-    def find_adj_tiles_free(self, petri_dish, pawns_to_ignore):
-        position = self.get_property('position').get()
-        adj_tiles_pos = petri_dish.get_adj_tiles(petri_dish, position)
-
-        for adj_pawn in petri_dish.get_pawns():
-            adj_pawn_pos = adj_pawn.get_property('position').get()
-            if adj_pawn_pos in adj_tiles_pos and adj_pawn not in pawns_to_ignore:
-                adj_tiles_pos.remove(adj_pawn_pos)
-            if len(adj_tiles_pos) == 0:
-                break
-
-        return adj_tiles_pos
+        if self.has_property('lifecycle'):
+            iterator = iter(self.get_property('lifecycle').get())
+            acted = False
+            while not acted:
+                acted = self.get_behavior(next(iterator)).act(petri_dish, self)
+        self.get_behavior('death').check(petri_dish, self)
 
     def to_string(self):
         pawn_to_string = ''

@@ -44,6 +44,3 @@ class PawnInterface:
     def to_string(self):
         pass
 
-    @abstractmethod
-    def find_adj_tiles_free(self, petri_dish, pawns_to_ignore):
-        pass

@@ -5,11 +5,11 @@
         "properties": {
           "id": {"id": {}},
           "taxonomy": {"microbe": {}},
-          "position": {"position": {"x": 20, "y": 21}},
+          "position": {"position": {"x": 20, "y": 20}},
           "size": {"size": 10},
           "max_size": {"max_size": {}},
           "energy": {"energy": 1},
-          "max_energy": {"max_energy": {}},
+          "max_energy": {"max_energy": 1},
           "shape": {"forkhead": {}},
           "color": {"red": {}},
           "tail": {"tail": {}},

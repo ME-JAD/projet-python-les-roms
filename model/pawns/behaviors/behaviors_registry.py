@@ -6,7 +6,6 @@ from model.pawns.behaviors.eating_behaviors.necrophagous import Necrophagous
 from model.pawns.behaviors.eating_behaviors.photosynthesis import Photosynthesis
 from model.pawns.behaviors.moving_behaviors.anarchic import Anarchic
 from model.pawns.behaviors.moving_behaviors.explorer import Explorer
-from model.pawns.behaviors.moving_behaviors.follow import Follow
 from model.pawns.behaviors.moving_behaviors.static import Static
 from model.pawns.behaviors.mutation_behaviors.high import High
 from model.pawns.behaviors.mutation_behaviors.low import Low
@@ -35,8 +34,7 @@ class BehaviorsRegistry(IBehaviors):
             "moving": {
                 "anarchic": Anarchic,
                 "explorer": Explorer,
-                "static": Static,
-                "follow": Follow
+                "static": Static
             },
             "reproducing": {
                 "mitosis": Mitosis,
