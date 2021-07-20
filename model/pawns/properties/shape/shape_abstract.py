@@ -31,47 +31,47 @@ class ShapeAbstract(PropertyInterface):
     def update_pawn_shape(self, petri_dish, pawn):
         head_pawn_direction = pawn.get_property('direction').get()
         self.__rotated_head_parts_positions = self.__head_parts_positions.copy()
-        for i in range(head_pawn_direction):
-            self.rotate_right_relative_positions()
+        for head_part_index in range(head_pawn_direction):
+            self.__rotate_right_relative_positions()
 
         if len(self.__head_parts_positions) > len(self.__head_parts):
-            self.initialize_head_parts(petri_dish, pawn)
+            self.__initialize_head_parts(petri_dish, pawn)
 
-        for i in range(len(self.__head_parts_positions)):
-            head_part_position = self.__rotated_head_parts_positions[i]
+        for head_part_index in range(len(self.__head_parts_positions)):
+            self._update_head_part_position(head_part_index)
 
-            absolute_head_part_position = (
-                pawn.get_property('position').get()['x'] + head_part_position[0],
-                pawn.get_property('position').get()['y'] + head_part_position[1]
-            )
+    def _update_head_part_position(self, head_part_index):
+        head_part_position = self.__rotated_head_parts_positions[head_part_index]
+        parent_pawn = self.__head_parts[head_part_index].get_property('parent_pawn').get()
 
-            self.__head_parts[i].get_property('position').set(absolute_head_part_position)
+        self.__head_parts[head_part_index].get_property('position').set((
+            parent_pawn.get_property('position').get()['x'] + head_part_position[0],
+            parent_pawn.get_property('position').get()['y'] + head_part_position[1]
+        ))
+        self.__update_head_part_color(head_part_index)
 
-            head_part_parent_color = self.__head_parts[i].get_property('parent_pawn').get().get_property('color').clone()
-            head_part_parent_color.darken(70)
-            head_part_parent_color.swap()
-            self.__head_parts[i].set_property('color', head_part_parent_color)
+    def __update_head_part_color(self, head_part_index):
+        head_part_parent_color = self.__head_parts[head_part_index].get_property('parent_pawn').get().get_property('color').clone()
+        head_part_parent_color.darken(70)
+        head_part_parent_color.swap()
+        self.__head_parts[head_part_index].set_property('color', head_part_parent_color)
 
-    def initialize_head_parts(self, petri_dish, pawn):
+    def __initialize_head_parts(self, petri_dish, pawn):
         for head_part_position in self.__head_parts_positions:
-            new_head_part = HeadPart()
             head_part_parent = ParentPawn(pawn)
+            new_head_part = HeadPart(head_part_parent)
 
-            absolute_head_part_position = {
+            new_head_part.set_property('position', Position({
                 'x': pawn.get_property('position').get()['x'] + head_part_position[0],
                 'y': pawn.get_property('position').get()['y'] + head_part_position[1]
-            }
-
-            new_head_part.set_property('energy', head_part_parent.get().get_property('energy'))
-            new_head_part.set_property('parent_pawn', head_part_parent)
-            new_head_part.set_property('position', Position(absolute_head_part_position))
+            }))
 
             self.__head_parts.append(new_head_part)
             petri_dish.get_pawns().append(new_head_part)
 
     # y = - x
     # x = y
-    def rotate_right_relative_positions(self):
+    def __rotate_right_relative_positions(self):
         head_parts_to_rotate = self.__rotated_head_parts_positions
         for i in range(len(head_parts_to_rotate)):
             y = - head_parts_to_rotate[i][0]

@@ -7,7 +7,7 @@ class Necrophagous(BehaviorInterface):
     def act(self, petri_dish: IPetriDish, pawn: PawnInterface):
         if pawn.get_property('energy').get() < pawn.get_property('max_energy').get():
             pawn_pos = pawn.get_property('position').get()
-            adj_tiles_pos = petri_dish.get_adj_tiles(petri_dish, pawn_pos)
+            adj_tiles_pos = petri_dish.get_adj_tiles(pawn_pos)
 
             for adj_pawn in petri_dish.get_pawns():
                 found_adj_pawn_dead = adj_pawn.get_property('position').get() in adj_tiles_pos \
@@ -17,9 +17,7 @@ class Necrophagous(BehaviorInterface):
 
                 if found_adj_pawn_dead:
                     adj_pawn.get_property('energy').set(adj_pawn.get_property('energy').get() - 1)
-                    if adj_pawn.get_property('energy').get() <= 0:
-                        adj_pawn.get_behavior('death').act(petri_dish, adj_pawn)
-                    pawn.get_property('energy').set(pawn.get_property('energy').get() + 1)
+                    pawn.get_property('energy').set(pawn.get_property('energy').get() + 5)
                     return True
 
         return False

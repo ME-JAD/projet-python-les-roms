@@ -8,17 +8,19 @@ from shared.icontroller import IController
 class Controller(IController):
     def __init__(self):
         self.__model = Model()
-        self.__view = View(self, self.__model.get_petri_dish().get_size_x(), self.__model.get_petri_dish().get_size_y())
+        self.__view = View(self,
+                           self.__model.get_tkinter(),
+                           self.__model.get_general_conf())
         self.__stop = False
 
     def start(self):
         simulation_mode = self.__model.get_simulation_mode()
-        if simulation_mode == 'file':
-            self.generate_simulation_from_initial_conditions()
+        if simulation_mode == 'file' or simulation_mode == 'default':
+            self.play_simulation_from_initial_conditions()
         elif simulation_mode == 'dao':
             self.replay_simulation()
 
-    def generate_simulation_from_initial_conditions(self):
+    def play_simulation_from_initial_conditions(self):
         simulation_playing = True
         self.__model.get_petri_dish().marshall_simulation_step(0)
         while simulation_playing and not self.__stop:
@@ -26,10 +28,12 @@ class Controller(IController):
             self.update_view()
 
             time.sleep(self.__model.get_general_conf()["simulation_speed"])
-            simulation_playing = self.get_simulation_state()
+            # simulation_playing = self.get_simulation_state()
 
             self.__model.get_petri_dish().marshall_simulation_step(
                 self.__model.get_petri_dish().get_simulation_step_count() + 1)
+
+            print('pawn count: ' + str(len(self.__model.get_petri_dish().get_pawns())))
         self.save_state_in_bdd()
 
     def replay_simulation(self):

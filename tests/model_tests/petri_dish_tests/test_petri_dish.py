@@ -33,7 +33,8 @@ def test_get_inbound_pos(petri_dish):
     m2_adj_tiles = PetriDish.get_adj_tiles(petri_dish, microbe2.get_property('position').get())
     assert m2_adj_tiles == [
         {'x': 0, 'y': petri_dish.get_size_y() - 1}, {'x': petri_dish.get_size_x() - 1, 'y': 0},
-        {'x': petri_dish.get_size_x() - 2, 'y': petri_dish.get_size_y() - 1}, {'x': petri_dish.get_size_x() - 1, 'y': petri_dish.get_size_y() - 2},
+        {'x': petri_dish.get_size_x() - 2, 'y': petri_dish.get_size_y() - 1},
+        {'x': petri_dish.get_size_x() - 1, 'y': petri_dish.get_size_y() - 2},
     ]
 
     microbe3 = petri_dish.get_pawns()[2]

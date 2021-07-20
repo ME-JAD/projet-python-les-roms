@@ -28,10 +28,14 @@ class IPetriDish:
     def change_builder(self, builder: PawnBuilderInterface):
         pass
 
-    @staticmethod
-    def get_adj_tiles(petri_dish, position: dict):
+    @abstractmethod
+    def get_adj_tiles(self, position: dict):
         pass
 
     @abstractmethod
     def get_inbound_pos(self, position: dict):
+        pass
+
+    @abstractmethod
+    def find_adj_tiles_free(self, position: dict, pawns_to_ignore: list):
         pass

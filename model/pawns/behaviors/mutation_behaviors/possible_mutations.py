@@ -6,10 +6,14 @@ from model.pawns.behaviors.eating_behaviors.necrophagous import Necrophagous
 from model.pawns.behaviors.moving_behaviors.anarchic import Anarchic
 from model.pawns.behaviors.moving_behaviors.explorer import Explorer
 from model.pawns.behaviors.moving_behaviors.static import Static
+from model.pawns.behaviors.reproducing_behaviors.assimilation import Assimilation
+from model.pawns.behaviors.reproducing_behaviors.mitosis import Mitosis
 from model.pawns.pawn_interface import PawnInterface
 from model.pawns.properties.color.blue import Blue
 from model.pawns.properties.color.green import Green
 from model.pawns.properties.color.red import Red
+from model.pawns.properties.shape.forkhead import Forkhead
+from model.pawns.properties.tail.tail import Tail
 
 
 class PossibleMutations:
@@ -22,6 +26,12 @@ class PossibleMutations:
                 "red": Red,
                 "green": Green,
                 "blue": Blue
+            },
+            "tail": {
+                "tail": Tail
+            },
+            "shape": {
+                "forkhead": Forkhead
             }
         }
 
@@ -36,6 +46,10 @@ class PossibleMutations:
                 "explorer": Explorer,
                 "static": Static
             },
+            "reproducing": {
+                "mitosis": Mitosis,
+                "assimilation": Assimilation
+            }
         }
 
     def get_possible_behavior_mutations(self):

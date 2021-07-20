@@ -14,7 +14,7 @@ class ColorAbstract(PropertyInterface):
         self.__blue = 0 if rgb is None or type(rgb) == dict else rgb[2]
 
     def get(self) -> str:
-        return f'#{self.__red:02x}{self.__green:02x}{self.__blue:02x}'
+        return '#{:02x}{:02x}{:02x}'.format(self.__red, self.__green, self.__blue)
 
     def get_red(self) -> int:
         return self.__red
@@ -31,9 +31,9 @@ class ColorAbstract(PropertyInterface):
         self.__blue = rgb[2]
 
     def darken(self, dark_coefficient: int):
-        self.__red = max(0, self.__red - dark_coefficient)
-        self.__green = max(0, self.__green - dark_coefficient)
-        self.__blue = max(0, self.__blue - dark_coefficient)
+        self.__red = max(0, self.__red - dark_coefficient) % 255
+        self.__green = max(0, self.__green - dark_coefficient) % 255
+        self.__blue = max(0, self.__blue - dark_coefficient) % 255
 
     def pawn_true_color(self, pawn):
         if pawn.has_property('max_energy'):
@@ -41,11 +41,13 @@ class ColorAbstract(PropertyInterface):
             pawn_max_energy = pawn.get_property('max_energy').get()
             energy_level = pawn_energy / pawn_max_energy
             if energy_level < 1:
-                pawn_energy_level = energy_level * 255
-                darkened_color = self.clone()
-                darkened_color.darken(int(round(pawn_energy_level)))
-                return darkened_color
-        return pawn.get_property('color')
+                pawn_energy_level = int(round(100 - energy_level * 100))
+                pawn_color = pawn.get_property('color')
+                red = max(0, pawn_color.get_red() - pawn_energy_level)
+                green = max(0, pawn_color.get_green() - pawn_energy_level)
+                blue = max(0, pawn_color.get_blue() - pawn_energy_level)
+                return '#{:02x}{:02x}{:02x}'.format(red, green, blue)
+        return pawn.get_property('color').get()
 
     def swap(self):
         red = self.__red

@@ -8,7 +8,7 @@ class Herbivorous(BehaviorInterface):
     def act(self, petri_dish: IPetriDish, pawn: PawnInterface):
         if pawn.get_property('energy').get() < pawn.get_property('max_energy').get():
             pawn_pos = pawn.get_property('position').get()
-            adj_tiles_pos = petri_dish.get_adj_tiles(petri_dish, pawn_pos)
+            adj_tiles_pos = petri_dish.get_adj_tiles(pawn_pos)
 
             for adj_pawn in petri_dish.get_pawns():
                 found_adj_plant_alive = adj_pawn.get_property('position').get() in adj_tiles_pos \

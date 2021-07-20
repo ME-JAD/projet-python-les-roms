@@ -1,7 +1,12 @@
 {
-  "simulation_mode": "file",
+  "simulation_mode": "default",
   "simulation_file": "\\..\\conf\\simconfs\\multiple_colonies_tests.json",
+  "simulation_id": "eb908a64-13d8-4bff-bae2-775e8cc184ef",
   "simulation_speed": 0.05,
-  "simulation_size_x": 1000,
-  "simulation_size_y": 1000
+  "simulation_size_x": 50,
+  "simulation_size_y": 50,
+  "simulation_pawn_size": 10,
+  "default_plants_amount": 15,
+  "default_microbes_amount": 10,
+  "complex_microbes_amount": 3
 }

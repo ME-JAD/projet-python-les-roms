@@ -22,6 +22,6 @@ class Direction(PropertyInterface):
         elif old_position['x'] < new_position['x']:
             return 1
         elif old_position['y'] < new_position['y']:
-            return 2
-        else:
             return 0
+        else:
+            return 2
