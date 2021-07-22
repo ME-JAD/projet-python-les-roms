@@ -6,9 +6,9 @@
           "id": {"id": {}},
           "taxonomy": {"microbe": {}},
           "position": {"position": {"x": 20, "y": 20}},
-          "size": {"size": 10},
-          "max_size": {"max_size": {}},
-          "energy": {"energy": 1},
+          "size": {"size": 150},
+          "max_size": {"max_size": 150},
+          "energy": {"energy": 15},
           "max_energy": {"max_energy": 1},
           "shape": {"forkhead": {}},
           "color": {"red": {}},
@@ -21,7 +21,7 @@
           "death": "silent_death",
           "eating": "herbivorous",
           "moving": "explorer",
-          "reproducing": "mitosis",
+          "reproducing": "assimilation",
           "mutation": "low"
         }
       }

@@ -27,6 +27,7 @@ class View:
 
         for pawn in model.get_petri_dish().get_pawns():
             pawn_pos = pawn.get_property('position').get()
+            # unknown issue with headparts colors may appear here
             pawn_color = pawn.get_property('color').pawn_true_color(pawn) \
                 if pawn.has_property('alive') and pawn.get_property('alive').get() else '#a6a6a6'
 

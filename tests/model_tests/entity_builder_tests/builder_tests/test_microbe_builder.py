@@ -23,7 +23,7 @@ def test_build_microbe():
     assert microbe.get_property('color').get() == '#ff0000'
     assert microbe.get_property('shape').get() == []
     assert microbe.get_property('size').get() == 1
-    assert microbe.get_property('energy').get() == 1
+    assert microbe.get_property('energy').get() == 3
 
 
 

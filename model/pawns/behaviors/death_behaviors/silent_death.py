@@ -28,7 +28,7 @@ class SilentDeath(BehaviorInterface):
 
     def __delete_pawns_after_countdown(self, petri_dish: IPetriDish, pawn: PawnInterface):
         pawn.get_property('energy').set(pawn.get_property('energy').get() - 1)
-        if pawn.get_property('energy').get() <= 5:
+        if pawn.get_property('energy').get() <= 1:
             petri_dish.get_pawns().remove(pawn)
 
     def to_string(self) -> str:

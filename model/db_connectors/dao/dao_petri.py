@@ -24,6 +24,7 @@ class DaoPetri(DAO):
         step_pawns = []
         for pawn in step.get_pawns():
             step_pawns.append(DaoPetri.marshall_pawn(pawn))
+        # TODO si la simulation depase 16793598 on cree une autre simu
         return step_pawns
 
     @staticmethod

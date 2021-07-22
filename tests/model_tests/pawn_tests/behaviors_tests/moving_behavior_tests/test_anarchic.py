@@ -35,15 +35,15 @@ def test_microbe_suffocation(petri_dish):
     microbe_suffocated.get_property('position').set((1, 1))
     microbe_suffocated.act(petri_dish)
 
-    assert microbe_suffocated.get_property('alive').get()
-
-    assert [
-        microbe2.get_property('position').get(),
-        microbe3.get_property('position').get(),
-        microbe4.get_property('position').get(),
-        microbe1.get_property('position').get(),
-    ] == petri_dish.get_adj_tiles(petri_dish, microbe_suffocated.get_property('position').get())
-
-    microbe_suffocated.get_behavior('moving').act(petri_dish, microbe_suffocated)
-
     assert not microbe_suffocated.get_property('alive').get()
+
+    # assert [
+    #     microbe2.get_property('position').get(),
+    #     microbe3.get_property('position').get(),
+    #     microbe4.get_property('position').get(),
+    #     microbe1.get_property('position').get(),
+    # ] == petri_dish.get_adj_tiles(petri_dish, microbe_suffocated.get_property('position').get())
+    #
+    # microbe_suffocated.get_behavior('moving').act(petri_dish, microbe_suffocated)
+    #
+    # assert not microbe_suffocated.get_property('alive').get()

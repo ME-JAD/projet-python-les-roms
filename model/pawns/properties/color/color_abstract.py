@@ -1,5 +1,3 @@
-import copy
-
 from model.pawns.properties.property_interface import PropertyInterface
 
 
@@ -47,7 +45,7 @@ class ColorAbstract(PropertyInterface):
                 green = max(0, pawn_color.get_green() - pawn_energy_level)
                 blue = max(0, pawn_color.get_blue() - pawn_energy_level)
                 return '#{:02x}{:02x}{:02x}'.format(red, green, blue)
-        return pawn.get_property('color').get()
+        return self.get()
 
     def swap(self):
         red = self.__red
@@ -56,7 +54,7 @@ class ColorAbstract(PropertyInterface):
         self.__blue = red
 
     def clone(self):
-        return copy.deepcopy(self)
+        return ColorAbstract((self.__red, self.__green, self.__blue))
 
     def to_string(self) -> str:
         return "color"

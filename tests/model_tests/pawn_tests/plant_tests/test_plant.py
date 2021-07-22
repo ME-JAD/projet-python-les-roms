@@ -28,6 +28,6 @@ def test_plant_lifecycle(petri_dish):
         plant.act(petri_dish)
 
     assert plant.get_property('alive').get()
-    assert plant.get_property('energy').get() == 998
+    assert plant.get_property('energy').get() == 1001
     # grow twice
 
