@@ -21,7 +21,7 @@ class MsSqlDbConnector:
                                             database=__mysqlConf["database"])
 
     def __load_conf(self):
-        with open(os.path.dirname(__file__) + '\\..\\..\\conf\\dbconfs\\mssqldbconf.json') as jsonfile:
+        with open(os.path.dirname(__file__) + '/../../conf/dbconfs/mssqldbconf.json') as jsonfile:
             self.__dbConf = json.load(jsonfile)
 
     def get_cursor(self):

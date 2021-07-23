@@ -18,7 +18,7 @@ class MongoDbDbConnector:
                                 )[__mongo_db_conf["database"]]
 
     def __load_conf(self):
-        with open(os.path.dirname(__file__) + '\\..\\..\\conf\\dbconfs\\mongodbdbconf.json') as jsonfile:
+        with open(os.path.dirname(__file__) + '/../../conf/dbconfs/mongodbdbconf.json') as jsonfile:
             self.__db_conf = json.load(jsonfile)
 
     def get_collection(self, collection: str):

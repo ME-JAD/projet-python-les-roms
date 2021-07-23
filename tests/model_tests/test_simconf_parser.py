@@ -13,7 +13,7 @@ from model.simulation_configuration_parser import SimulationConfigurationParser
 
 # functional test to assert that loading a sim from a file loads the correct microbes
 def test_simconf_parser():
-    parser = SimulationConfigurationParser('\\..\\conf\\simconfs\\tests.json')
+    parser = SimulationConfigurationParser('/../conf/simconfs/tests.json')
     assert len(parser.get_pawns()) == 2
     parsed_microbe = parser.get_pawns()[0]
 

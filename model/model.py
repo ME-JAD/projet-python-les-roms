@@ -70,5 +70,5 @@ class Model:
         return self.__tkinter
 
     def __load_general_conf(self):
-        with open(os.path.dirname(__file__) + '\\..\\conf\\general_conf.json') as jsonfile:
+        with open(os.path.dirname(__file__) + '/../conf/general_conf.json') as jsonfile:
             self.__general_conf = json.load(jsonfile)
