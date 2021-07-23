@@ -9,7 +9,7 @@ class Lifecycle(PropertyInterface):
 
     def __init__(self, lifecycle=None):
         if isinstance(lifecycle, str):
-            self.__lifecycle = re.split(";|,|\*|\n", lifecycle)
+            self.__lifecycle = re.split(";|,|\n", lifecycle)
         elif isinstance(lifecycle, list):
             self.__lifecycle = lifecycle
         else:
