@@ -1,0 +1,98 @@
+{
+  "pawns": {
+    "microbes": {
+      "microbe_001": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 20, "y": 20}},
+          "size": {"size": 150},
+          "max_size": {"max_size": 150},
+          "energy": {"energy": 15},
+          "max_energy": {"max_energy": 1},
+          "shape": {"insect": {}},
+          "color": {"red": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "explorer",
+          "reproducing": "assimilation",
+          "mutation": "low"
+        }
+      },
+      "microbe_002": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 25, "y": 30}},
+          "size": {"size": 150},
+          "max_size": {"max_size": 150},
+          "energy": {"energy": 15},
+          "max_energy": {"max_energy": 1},
+          "shape": {"insect": {}},
+          "color": {"red": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "explorer",
+          "reproducing": "assimilation",
+          "mutation": "low"
+        }
+      },
+      "microbe_003": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 30, "y": 25}},
+          "size": {"size": 150},
+          "max_size": {"max_size": 150},
+          "energy": {"energy": 15},
+          "max_energy": {"max_energy": 1},
+          "shape": {"insect": {}},
+          "color": {"red": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "explorer",
+          "reproducing": "assimilation",
+          "mutation": "low"
+        }
+      },
+      "microbe_004": {
+        "properties": {
+          "id": {"id": {}},
+          "taxonomy": {"microbe": {}},
+          "position": {"position": {"x": 35, "y": 35}},
+          "size": {"size": 150},
+          "max_size": {"max_size": 150},
+          "energy": {"energy": 15},
+          "max_energy": {"max_energy": 1},
+          "shape": {"insect": {}},
+          "color": {"red": {}},
+          "direction": {"direction": 0},
+          "lifecycle": {"lifecycle": "birth;reproducing;eating;moving"}
+        },
+        "behaviors": {
+          "birth": "spontaneous",
+          "death": "silent_death",
+          "eating": "herbivorous",
+          "moving": "explorer",
+          "reproducing": "assimilation",
+          "mutation": "low"
+        }
+      }
+    }
+  }
+}

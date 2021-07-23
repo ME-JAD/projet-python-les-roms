@@ -9,6 +9,7 @@ from model.pawns.properties.max_energy.max_energy import MaxEnergy
 from model.pawns.properties.lifecycle.lifecycle import Lifecycle
 from model.pawns.properties.parent_pawn.parent_pawn import ParentPawn
 from model.pawns.properties.position.position import Position
+from model.pawns.properties.shape.insect import Insect
 from model.pawns.properties.shape.simple import Simple as SimpleShape
 from model.pawns.properties.shape.forkhead import Forkhead
 from model.pawns.properties.size.size import Size as SimpleSize
@@ -39,7 +40,8 @@ class PropertiesRegistry(IProperties):
             },
             "shape": {
                 "simple": SimpleShape,
-                "forkhead": Forkhead
+                "forkhead": Forkhead,
+                "insect": Insect
             },
             "direction": {
                 "direction": Direction
