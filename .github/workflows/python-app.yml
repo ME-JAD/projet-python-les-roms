@@ -27,7 +27,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        sudo apt-get install Xvfb
+        sudo apt-get install xvfb
         Xvfb :1 -screen 0 800x600x24&
         export DISPLAY=localhost:1.0
         python -m pytest
